@@ -40,10 +40,15 @@ class PaymentController extends Controller
         ]);
 
 
+        try {
+            $this->userSubscriptionService->subscribeUser($request);
+            return redirect()->route('welcome')->with('success', 'You have successfully subscribed to a plan');
 
-        $this->userSubscriptionService->subscribeUser($request);
+        }
+        catch (\Exception $exception){
+            return redirect()->route('welcome')->with('error', $exception->getMessage());
+        }
 
-        return redirect()->route('welcome')->with('success', 'You have successfully subscribed to a plan');
 
 
     }

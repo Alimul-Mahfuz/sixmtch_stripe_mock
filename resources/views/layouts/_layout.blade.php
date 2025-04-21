@@ -23,6 +23,11 @@
                     <li class="nav-item">
                         <a class="nav-link fw-semibold  {{ request()->routeIs('welcome') ? 'active' : '' }}" aria-current="page" href="{{route('welcome')}}">Home</a>
                     </li>
+                    @if(auth()->check())
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold  {{ request()->routeIs('subscriptions.index') ? 'active' : '' }}" aria-current="page" href="{{route('subscriptions.index')}}">My Subscription</a>
+                        </li>
+                    @endif
 
                 </ul>
 

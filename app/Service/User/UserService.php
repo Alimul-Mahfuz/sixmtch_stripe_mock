@@ -3,6 +3,7 @@
 namespace App\Service\User;
 
 use App\Contract\User\UserContract;
+use App\Dto\User\UserCardDetailDTO;
 
 class UserService
 {
@@ -31,5 +32,11 @@ class UserService
 
         $this->userRepository->updateCardInfo($user->id, $cardInfo);
 
+    }
+
+    function getCardInfoByUserId($userId): UserCardDetailDTO
+    {
+        $userCard = $this->userRepository->cardInfoByUserId($userId);
+        return new UserCardDetailDTO($userCard->card_number, $userCard->exp, $userCard->cvv, $userCard->name_on_the_card, $userCard->billing_address);
     }
 }

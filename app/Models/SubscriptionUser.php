@@ -11,7 +11,6 @@ class SubscriptionUser extends Model
         'user_id',
         'is_active',
         'expires_at',
-        'transaction_id',
         'is_autorenew',
     ];
 
@@ -23,6 +22,7 @@ class SubscriptionUser extends Model
 
     function subscription_plans(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(SubscriptionPlan::class);
+        return $this->belongsTo(SubscriptionPlan::class,'subscription_plan_id','id');
     }
+
 }

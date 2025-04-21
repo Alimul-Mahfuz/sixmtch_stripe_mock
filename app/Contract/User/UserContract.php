@@ -11,4 +11,6 @@ interface UserContract
     function getActiveSubscriptionPlanByUserId($userId);
 
     function updateCardInfo($userId, $cardInfo);
+
+    function cardInfoByUserId($userId);
 }

@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'stripe' => [
+        'payment_url' => "127.0.0.1:8000/api/v1/do-payment",
+        'token' => env('STRIPE_TOKEN', 'dierei4543234323432'),
+    ]
+
 ];

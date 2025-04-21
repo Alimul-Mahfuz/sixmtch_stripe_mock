@@ -26,4 +26,11 @@ class UserRepository implements UserContract
     {
         return User::query()->where('id', $userId)->update($cardInfo);
     }
+
+    function cardInfoByUserId($userId){
+        return User::query()
+            ->select('card_number','name_on_the_card','exp','billing_address','cvv')
+            ->where('id', $userId)
+            ->first();
+    }
 }
