@@ -9,7 +9,7 @@
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" name="email"
                                class="form-control @error('email') is-invalid @enderror"
-                               id="exampleInputEmail1" value="{{ old('email') }}" aria-describedby="emailHelp">
+                               id="exampleInputEmail1" value="testuser1@gmail.com" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
