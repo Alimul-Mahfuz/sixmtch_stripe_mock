@@ -75,8 +75,8 @@ class PaymentController extends Controller
         }
 
         return response()->json([
-            'success' => false,
-//            'transaction_id' => rand(12545, 999999) . "IKDIEKD",
+            'success' => true,
+            'transaction_id' => rand(12545, 999999) . "IKDIEKD",
             'type' => 'refund',
         ]);
     }

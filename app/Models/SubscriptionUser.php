@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubscriptionUser extends Model
 {
-    protected $fillable=[
+    protected $fillable = [
         'subscription_plan_id',
+        'transaction_id',
         'user_id',
         'is_active',
         'expires_at',
@@ -22,7 +23,7 @@ class SubscriptionUser extends Model
 
     function subscription_plans(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(SubscriptionPlan::class,'subscription_plan_id','id');
+        return $this->belongsTo(SubscriptionPlan::class, 'subscription_plan_id', 'id');
     }
 
 }
