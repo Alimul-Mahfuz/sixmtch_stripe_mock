@@ -92,3 +92,8 @@ php artisan optimize:clear
 This will create the database table and fill the table with seeded data.
 ##### 5.  Now login to the system using Email: testuser1@gmail.com and Password: Password.
 ##### 6. Now subscribe to any plan.
+
+##### 7. Keep running the following command using cron job for auto renewal
+```
+php artisan app:renew-subscription
+```
